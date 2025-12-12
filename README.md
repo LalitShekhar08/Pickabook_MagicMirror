@@ -6,7 +6,7 @@ A full-stack prototype that transforms a child's photo into a magical storybook 
 ## The Goal
 The assignment was to build an end-to-end "Magic Mirror" where a user uploads a photo, and the system personalizes an illustration using Generative AI.
 
-## 🛠 Tech Stack
+##  Tech Stack
 * **Frontend:** Next.js 14 (App Router), Tailwind CSS (Glassmorphism UI).
 * **Backend:** Python FastAPI.
 * **AI Engine:** Hugging Face Inference API (Stable Diffusion XL).
