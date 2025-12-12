@@ -1,0 +1,89 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DARK THEME */
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Deep Space Background */
+  background: radial-gradient(ellipse at top, #1e1b4b 0%, #0f172a 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/*LAYOUT */
+main { width: 100%; max-width: 1100px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 50px; }
+h1 {
+  font-size: 3rem; margin: 0 0 10px 0;
+  /* Golden Glow Text */
+  background: linear-gradient(to right, #fcd34d, #f97316);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+header p { color: #cbd5e1; font-size: 1.1rem; }
+
+/* GRID SYSTEM 2 Columns */
+main > div {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;
+}
+
+/* CARDS  */
+main > div > div:not(header) {
+  background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px;
+  /* Increased padding for a bigger feel */
+  padding: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex; flex-direction: column;
+  /* Removed 'align-items: center' to left-align content */
+  /* Increased min-height for a bigger box */
+  min-height: 500px;
+}
+h2 {
+  align-self: flex-start; margin-top: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 15px; width: 100%; font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+/* UPLOAD BOX & BUTTONS */
+input[type="file"] {
+  width: 100%; padding: 30px; border: 2px dashed rgba(255,255,255,0.3);
+  border-radius: 16px; text-align: center; cursor: pointer; color: white; margin-bottom: 20px;
+}
+button {
+  background: linear-gradient(to right, #f59e0b, #ea580c); color: white; border: none;
+  width: 100%; padding: 18px; font-size: 1.2rem; font-weight: bold; border-radius: 12px;
+  cursor: pointer; margin-top: auto; /* Pushes button to bottom */
+}
+button:disabled { background: #475569; cursor: not-allowed; opacity: 0.7; }
+
+/* RESULT IMAGE  */
+img {
+  max-width: 100%; max-height: 350px; width: auto; height: auto;
+  object-fit: contain; border-radius: 12px;
+  /* Changed margin to left-align */
+  margin: 0 0 25px 0;
+  display: block; align-self: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Style for the placeholder text to center it vertically */
+.placeholder-text {
+    text-align: center; width: 100%; margin-top: auto; margin-bottom: auto;
+    color: #64748b; font-size: 1.2rem;
+}
+
+/* Style to keep loading spinner centered */
+.loading-container {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; flex-grow: 1;
+}
+
+/* Mobile Fix */
+@media (max-width: 850px) { main > div { grid-template-columns: 1fr; } }
